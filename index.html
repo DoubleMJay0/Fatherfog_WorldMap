@@ -344,7 +344,10 @@ VILLAGES.forEach(v => {
 });
 /* ================== Gemeinsame Wahl ================== */
 // Für GitHub Pages: Supabase-Projekt eintragen (Project URL + anon public key).
-const SUPABASE = { url: '', key: '' };
+const SUPABASE = {
+  url: 'https://onvfjbxzsxjxqmcwucfm.supabase.co',
+  key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9udmZqYnh6c3hqeHFtY3d1Y2ZtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM1NTY2NDAsImV4cCI6MjEwOTEzMjY0MH0.cuksXtZjNTtb4eAR9et4jHWxzI03C3VQacwYVrtaj8Y'
+};
 const Shared = { api:null, myId:null, owner:false, canWrite:null, ready:false };
 let votes = {};                                   // docId -> {village, initials}
 const myVote = () => (Shared.ready && Shared.myId) ? votes[Shared.myId] || null : null;
