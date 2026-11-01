@@ -54,6 +54,13 @@ button:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
 #title{top:max(14px,env(safe-area-inset-top));left:max(16px,env(safe-area-inset-left));pointer-events:none}
 #title h1{margin:0;font-family:var(--caps);font-weight:400;font-size:clamp(22px,3vw,32px);letter-spacing:.28em;color:#f1ead8;text-shadow:0 2px 14px rgba(0,0,0,.9)}
 #title p{margin:2px 0 0;font-style:italic;font-size:clamp(14px,1.6vw,17px);color:#d8cfbb;text-shadow:0 1px 8px rgba(0,0,0,.95)}
+.creator{pointer-events:auto;display:inline-flex;align-items:center;gap:8px;margin-top:10px;min-height:40px;padding:6px 12px 6px 10px;
+  font-size:15px;color:#efe6d2;text-decoration:none;background:rgba(27,32,30,.62);border:1px solid rgba(233,220,190,.3);
+  backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);transition:border-color .2s, background .2s}
+.creator svg{width:18px;height:18px;color:#e0a46a;flex:none}
+.creator em{font-family:var(--caps);font-style:normal;letter-spacing:.06em;color:#f0c18f}
+.creator:hover{border-color:rgba(255,200,140,.7);background:rgba(55,44,32,.78)}
+.creator:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
 #tools{top:max(12px,env(safe-area-inset-top));right:max(12px,env(safe-area-inset-right));display:flex;flex-direction:column;gap:8px}
 .tbtn{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(27,32,30,.62);border:1px solid rgba(233,230,220,.28);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);color:#efe8d6;transition:background .2s}
 .tbtn:hover{background:rgba(60,48,34,.8)}
@@ -136,6 +143,8 @@ button:focus-visible{outline:2px solid var(--ember);outline-offset:3px}
 @keyframes stamp{0%{transform:scale(2.6) rotate(-25deg);opacity:0}60%{opacity:1}100%{transform:none}}
 
 @media (max-width:640px){
+  .creator .q{display:none}
+  .creator{max-width:calc(100vw - 96px)}
   #ways{justify-content:flex-start}
   .village .ribbon{font-size:13px;top:52px}
   #zoomIn,#zoomOut{display:none}
@@ -195,6 +204,10 @@ body:not(.entered) #markers,body:not(.entered) #ways,body:not(.entered) #title,b
 <header class="hud" id="title">
   <h1>FATHERFOG</h1>
   <p>Vier Dörfer rufen. Wählt euren Pfad.</p>
+  <a class="creator" href="https://doublemjay0.github.io/Fatherfog_Creator/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 20c4-1 7-4 9-8l3-6 2 2-6 3c-4 2-7 5-8 9z"/><path d="M13 12l-2-2"/></svg>
+    <span><span class="q">Noch keine Figur? </span><em>Zum Charaktergenerator</em></span>
+  </a>
 </header>
 
 <div class="hud" id="tools">
